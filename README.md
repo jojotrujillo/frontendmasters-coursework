@@ -1,1 +1,1 @@
-My HTML project for the Intro to Web Development course on Frontendmasters.com
+My HTML, CSS, and JavaScript projects for the Intro to Web Development course on Frontendmasters.com
