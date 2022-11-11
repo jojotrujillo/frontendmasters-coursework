@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,69 +8,73 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link href="./index.css" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <img src="./coffee_masters_logo.png" alt="hot coffee in mug logo">
     <h1 class="brand-name">Coffee Masters</h1>
   </header>
-  <main>
-    <section class="box order-items">
-      <h2>ITEMS</h2>
-      <div class="menu-items">
-        <p class="quantity">1x</p>
-        <p class="menu-item">Cappuccino</p>
-        <p class="cost">$6.00</p>
-        <p class="extras">Light Foam</p>
-      </div>
-      <div class="menu-items">
-        <p class="quantity">1x</p>
-        <p class="menu-item">Cappuccino</p>
-        <p class="cost">$7.90</p>
-        <p class="extras">Almond Milk</p>
-        <p class="extras-2">Double Espresso Shot</p>
-      </div>
-      <div class="menu-items">
-        <p class="quantity">1x</p>
-        <p class="menu-item">Croissant</p>
-        <p class="cost">$5.37</p>
-        <p class="extras">Butter</p>
-      </div>
-    </section>
-    <section class="box customers-name">
-      <h2>NAME</h2>
-      <label for="name-on-order" class="name-input">Name for order</label>
-      <input id="name-on-order" type="text">
-    </section>
-    <section class="box payment-info">
-      <h2>PAYMENT</h2>
-      <div class="card-number">
-        <label for="card-number" class="card-input">Card number</label>
-        <input id="card-number" type="text">
-      </div>
-      <div class="cvv-number">
-        <label for="cvv-number" class="cvv-input">CVV number</label>
-        <input id="cvv-number" type="text">
-      </div>
-    </section>
-  </main>
-  <footer>
-    <table class="order-totals">
-      <tbody>
-        <tr class="subtotal">
-          <td class="order-total-left">Subtotal:</td>
-          <td>$19.27</td>
-        </tr>
-        <tr class="tax">
-          <td class="order-total-left">Tax:</td>
-          <td>$0.96</td>
-        </tr>
-        <tr class="total">
-          <td class="order-total-left">Total:</td>
-          <td>$20.23</td>
-        </tr>
-      </tbody>
-    </table>
-    <button>Place order</button>
-  </footer>
+  <div class="page">
+    <main>
+      <section class="order box">
+        <h2>ITEMS</h2>
+        <div class="menu-items">
+          <p class="quantity">1x</p>
+          <p class="menu-item">Cappuccino</p>
+          <p class="cost">$6.00</p>
+          <p class="extras">Light Foam</p>
+        </div>
+        <div class="menu-items">
+          <p class="quantity">1x</p>
+          <p class="menu-item">Cappuccino</p>
+          <p class="cost">$7.90</p>
+          <p class="extras">Almond Milk</p>
+          <p class="extras-2">Double Espresso Shot</p>
+        </div>
+        <div class="menu-items">
+          <p class="quantity">1x</p>
+          <p class="menu-item">Croissant</p>
+          <p class="cost">$5.37</p>
+          <p class="extras">Butter</p>
+        </div>
+      </section>
+      <section class="customer-payment box">
+        <h2>NAME</h2>
+        <div class="customers-name">
+          <label for="name-on-order" class="name-input">Name for order</label>
+          <input id="name-on-order" type="text">
+        </div>
+        <h2>PAYMENT</h2>
+        <div class="card-number">
+          <label for="card-number" class="card-input">Card number</label>
+          <input id="card-number" type="text">
+        </div>
+        <div class="cvv-number">
+          <label for="cvv-number" class="cvv-input">CVV number</label>
+          <input id="cvv-number" type="text">
+        </div>
+      </section>
+    </main>
+    <footer>
+      <table class="order-totals">
+        <tbody>
+          <tr class="subtotal">
+            <td>Subtotal:</td>
+            <td>$19.27</td>
+          </tr>
+          <tr class="tax">
+            <td>Tax:</td>
+            <td>$0.96</td>
+          </tr>
+          <tr class="total">
+            <td>Total:</td>
+            <td>$20.23</td>
+          </tr>
+        </tbody>
+      </table>
+      <button>Place order</button>
+    </footer>
+  </div>
 </body>
+
 </html>
