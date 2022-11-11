@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <link href="./index.css" rel="stylesheet">
   <title>Coffee Masters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="./index.css" rel="stylesheet">
 </head>
-
 <body>
   <header>
     <img src="./coffee_masters_logo.png" alt="hot coffee in mug logo">
@@ -56,22 +53,23 @@
     </section>
   </main>
   <footer>
-    <section class="order-totals">
-      <div class="subtotal">
-        <p class="order-total-left">Subtotal:</p>
-        <p>$19.27</p>
-      </div>
-      <div class="tax">
-        <p class="order-total-left">Tax:</p>
-        <p>$0.96</p>
-      </div>
-      <div class="total">
-        <p class="order-total-left">Total:</p>
-        <p>$20.23</p>
-      </div>
-    </section>
+    <table class="order-totals">
+      <tbody>
+        <tr class="subtotal">
+          <td class="order-total-left">Subtotal:</td>
+          <td>$19.27</td>
+        </tr>
+        <tr class="tax">
+          <td class="order-total-left">Tax:</td>
+          <td>$0.96</td>
+        </tr>
+        <tr class="total">
+          <td class="order-total-left">Total:</td>
+          <td>$20.23</td>
+        </tr>
+      </tbody>
+    </table>
     <button>Place order</button>
   </footer>
 </body>
-
 </html>

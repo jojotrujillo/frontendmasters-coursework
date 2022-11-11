@@ -5,6 +5,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
+    padding: 0;
     background-color: #efefef;
 }
 
@@ -14,12 +15,19 @@ header {
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
-    padding: 15px;
+    padding: 4px;
+}
+
+.brand-name {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #fbf2c0;
+    margin-left: 5px;
 }
 
 img {
     height: 25px;
-    width: 25px;
+    position: relative;
 }
 
 .quantity {
@@ -29,6 +37,7 @@ img {
 .menu-item {
     grid-area: menu-item;
     font-weight: bold;
+    margin-bottom: 8px;
 }
 
 .cost {
@@ -53,10 +62,12 @@ img {
 
 .menu-items {
     display: grid;
+    padding: 10px 0;
+    grid-template-columns: 0.3fr 2.6fr 0.3fr;
     grid-template-areas:
-        "quantity menu-item . cost"
-        ". extras . ."
-        ". extras-2 . .";
+        "quantity menu-item cost"
+        "quantity extras cost"
+        "quantity extras-2 cost";
     border-bottom: 2px solid #DDB892;
 }
 
@@ -81,12 +92,13 @@ img {
 }
 
 #name-on-order {
-    border-color: #885a2d;
+    border: 2px solid #885a2d;
     padding: 8px;
-    border-radius: 25px;
+    border-radius: 100px;
     background-color: #eee1d5;
     height: 40px;
     width: 100%;
+    margin-top: 18px;
 }
 
 .name-input {
@@ -100,9 +112,9 @@ img {
 }
 
 #card-number {
-    border-color: #885a2d;
+    border: 2px solid #885a2d;
     padding: 8px;
-    border-radius: 25px;
+    border-radius: 100px;
     background-color: #eee1d5;
     height: 40px;
     width: 100%;
@@ -119,16 +131,17 @@ img {
 }
 
 #cvv-number {
-    border-color: #885a2d;
+    border: 2px solid #885a2d;
     padding: 8px;
-    border-radius: 25px;
+    border-radius: 100px;
     background-color: #eee1d5;
     height: 40px;
-    width: 65%;
+    max-width: 65%;
 }
 
 .card-number {
     margin-bottom: 12px;
+    margin-top: 18px;
 }
 
 .cvv-number {
@@ -160,12 +173,6 @@ main {
         "order-items    payment-info";
 }
 
-header h1 {
-    font-weight: normal;
-    font-size: 16px;
-    color: #fbf2c0;
-}
-
 .box {
     background-color: #eee1d5;
     padding: 15px;
@@ -175,8 +182,10 @@ header h1 {
 
 main h2 {
     font-weight: normal;
-    font-size: 17px;
+    font-size: 16px;
     color: #885a2d;
+    margin-top: 13px;
+    margin-bottom: -2px;
 }
 
 .order-totals {
@@ -213,9 +222,9 @@ main h2 {
 
 button {
     background-color: #deb993;
-    border-radius: 25px;
+    border-radius: 100px;
     border: none;
-    width: 95%;
+    width: 96%;
     padding: 10px;
     font-size: 16px;
     margin-top: 25px;
