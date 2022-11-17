@@ -1,3 +1,5 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+
 :root {
   --black: #0D0D0D;
   --dkblue: #0d314b;
@@ -10,6 +12,8 @@
   --mono: "Oxygen mono", monospace;
   --sans: Oxygen, sans-serif;
 }
+
+/* border box model: https://css-tricks.com/box-sizing/ */
   
 html {
   box-sizing: border-box;
@@ -18,6 +22,8 @@ html {
 *, *::before, *::after {
   box-sizing: inherit;
 }
+
+/* generic styles for the page */
   
 body {
   padding: 0;
@@ -41,7 +47,8 @@ a:hover {
   text-decoration: none;
 }
 
-/* navbar */
+/* navbar styles */
+
 nav {
   font-family: var(--mono);
   font-size: 80%;
@@ -117,6 +124,7 @@ nav a:hover, nav [class*="fa-"]:hover {
 }
   
 /* intro styles */
+
 #intro {
   padding-bottom: 10rem;
 }
@@ -143,6 +151,7 @@ nav a:hover, nav [class*="fa-"]:hover {
 }
 
 /* contact styles */
+
 #contact {
   background-color: var(--brown);
   display: flex;
@@ -161,6 +170,7 @@ nav a:hover, nav [class*="fa-"]:hover {
 }
 
 /* footer styles */
+
 footer {
   display: flex;
   flex-direction: column;
