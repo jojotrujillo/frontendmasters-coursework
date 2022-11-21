@@ -9,174 +9,23 @@ body {
     background-color: #efefef;
 }
 
-header {
+nav {
     background-color: #43281c;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 15px;
-    padding: 4px;
+    font-weight: normal;
+    font-size: 16px;
 }
 
 .brand-name {
-    font-weight: bold;
-    font-size: 1.5em;
     color: #fbf2c0;
-    margin-left: 5px;
 }
 
 img {
     height: 25px;
     position: relative;
-}
-
-.quantity {
-    grid-area: quantity;
-}
-
-.menu-item {
-    grid-area: menu-item;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.cost {
-    grid-area: cost;
-    font-weight: bold;
-}
-
-.extras {
-    grid-area: extras;
-    color: #B08968;
-    margin-top: 0;
-    margin-bottom: 5px;
-    font-size: 14px;
-}
-
-.extras-2 {
-    grid-area: extras-2;
-    color: #B08968;
-    margin-top: 0;
-    font-size: 14px;
-}
-
-.menu-items {
-    display: grid;
-    padding: 10px 0;
-    grid-template-columns: 0.3fr 2.6fr 0.3fr;
-    grid-template-areas:
-        "quantity menu-item cost"
-        "quantity extras cost"
-        "quantity extras-2 cost";
-    border-bottom: 2px solid #DDB892;
-}
-
-.menu-items:last-child {
-    border-bottom: none;
-}
-
-.order {
-    grid-area: order;
-    margin-top: 15px;
-    margin-left: 30px;
-    margin-right: 35px;
-}
-
-.customer-payment {
-    grid-area: customers-name;
-    position: relative;
-    display: inline-block;
-    margin-top: 15px;
-    margin-right: 31px;
-    margin-bottom: 21px;
-}
-
-#name-on-order {
-    border: 2px solid #885a2d;
-    padding: 8px;
-    border-radius: 100px;
-    background-color: #eee1d5;
-    height: 40px;
-    width: 100%;
-    margin-top: 18px;
-}
-
-.name-input {
-    background-color: #eee1d5;
-    color: #43281c;
-    font-size: 11px;
-    position: absolute;
-    left: 36px;
-    top: 59px;
-    padding: 0 2px;
-}
-
-#card-number {
-    border: 2px solid #885a2d;
-    padding: 8px;
-    border-radius: 100px;
-    background-color: #eee1d5;
-    height: 40px;
-    width: 100%;
-}
-
-.card-input {
-    background-color: #eee1d5;
-    color: #43281c;
-    font-size: 11px;
-    position: absolute;
-    left: 41px;
-    top: 59px;
-    padding: 0 2px;
-}
-
-#cvv-number {
-    border: 2px solid #885a2d;
-    padding: 8px;
-    border-radius: 100px;
-    background-color: #eee1d5;
-    height: 40px;
-    max-width: 65%;
-}
-
-.card-number {
-    margin-bottom: 12px;
-    margin-top: 18px;
-}
-
-.cvv-number {
-    margin-top: 12px;
-}
-
-.cvv-input {
-    background-color: #eee1d5;
-    color: #43281c;
-    font-size: 11px;
-    position: absolute;
-    left: 40px;
-    top: 123px;
-    padding: 0 2px;
-}
-
-.payment-info {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-right: 31px;
-}
-
-footer {
-    grid-area: total;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.order-totals {
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 30px;
+    top: 3px;
 }
 
 .page {
@@ -197,46 +46,171 @@ footer {
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+    margin-bottom: 20px;
+    width: 100%;
 }
 
-main h2 {
+.page h2 {
     font-weight: normal;
     font-size: 16px;
     color: #885a2d;
-    margin-top: 13px;
-    margin-bottom: -2px;
+}
+
+.quantity {
+    grid-area: quantity;
+    margin: inherit;
+}
+
+.menu-item {
+    display: grid;
+    padding: 10px 0;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-areas:
+        "quantity item cost"
+        "quantity extras cost";
+    border-bottom: 2px solid #DDB892;
+    row-gap: 8px;
+}
+
+.cost {
+    grid-area: cost;
+    font-weight: bold;
+    margin: inherit;
+}
+
+.extras-list {
+    grid-area: extras;
+    color: #B08968;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.extras {
+    margin-bottom: 5px;
+}
+
+.item {
+    grid-area: item;
+    font-weight: bold;
+    margin: inherit;
+}
+
+.menu-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.order {
+    grid-area: order;
+}
+
+.customer-payment {
+    grid-area: customers-name;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.user-input {
+    border: 2px solid #885a2d;
+    padding: 8px;
+    border-radius: 100px;
+    background-color: #eee1d5;
+    text-indent: 18px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.name-input {
+    background-color: #eee1d5;
+    color: #885a2d;
+    font-size: 11px;
+    position: absolute;
+    left: 25px;
+    top: -7px;
+    padding: 0 2px;
+}
+
+.card-input {
+    background-color: #eee1d5;
+    color: #885a2d;
+    font-size: 11px;
+    position: absolute;
+    left: 25px;
+    top: -7px;
+    padding: 0 2px;
+}
+
+.short-input {
+    max-width: 200px;
+}
+
+.card-number {
+    margin-bottom: 12px;
+    margin-top: 18px;
+}
+
+.cvv-number {
+    margin-top: 12px;
+}
+
+.cvv-input {
+    background-color: #eee1d5;
+    color: #885a2d;
+    font-size: 11px;
+    position: absolute;
+    left: 25px;
+    top: -7px;
+    padding: 0 2px;
+}
+
+.payment-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: 31px;
+}
+
+.totals {
+    grid-area: total;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-totals {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
 }
 
 .order-totals td {
-    padding: 15px;
+    padding: 10px;
 }
 
-.subtotal {
-    display: flex;
-    flex-direction: row;
-    margin-top: 25px;
-    margin-bottom: -11px;
-}
-
-.tax {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: -11px;
+.order-totals td:last-child {
+    text-align: right;
 }
 
 .total {
-    display: flex;
-    flex-direction: row;
     font-weight: bold;
-    margin-bottom: 7px;
 }
 
 button {
     background-color: #deb993;
     border-radius: 100px;
     border: none;
-    width: 96%;
-    padding: 10px;
+    width: 100%;
+    padding: 10px 30px;
     font-size: 16px;
-    margin-top: 25px;
 }

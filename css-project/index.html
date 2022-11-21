@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,61 +7,72 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link href="./index.css" rel="stylesheet">
 </head>
-
 <body>
-  <header>
-    <img src="./coffee_masters_logo.png" alt="hot coffee in mug logo">
-    <h1 class="brand-name">Coffee Masters</h1>
-  </header>
+  <nav>
+    <h1 class="brand-name">
+      <img src="./coffee_masters_logo.png" alt="hot coffee in mug logo">
+      Coffee Masters
+    </h1>
+  </nav>
   <div class="page">
-    <main>
-      <section class="order box">
-        <h2>ITEMS</h2>
-        <div class="menu-items">
+    <section class="order box">
+      <h2>ITEMS</h2>
+      <ul class="menu-items">
+        <li class="menu-item">
           <p class="quantity">1x</p>
-          <p class="menu-item">Cappuccino</p>
+          <p class="item">Cappuccino</p>
           <p class="cost">$6.00</p>
-          <p class="extras">Light Foam</p>
-        </div>
-        <div class="menu-items">
+          <ul class="extras-list">
+            <li class="extras">Light Foam</li>
+          </ul>
+        </li>
+        <li class="menu-item">
           <p class="quantity">1x</p>
-          <p class="menu-item">Cappuccino</p>
+          <p class="item">Cappuccino</p>
           <p class="cost">$7.90</p>
-          <p class="extras">Almond Milk</p>
-          <p class="extras-2">Double Espresso Shot</p>
-        </div>
-        <div class="menu-items">
+          <ul class="extras-list">
+            <li class="extras">Almond Milk</li>
+            <li class="extras">Double Espresso Shot</li>
+          </ul>
+        </li>
+        <li class="menu-item">
           <p class="quantity">1x</p>
-          <p class="menu-item">Croissant</p>
+          <p class="item">Croissant</p>
           <p class="cost">$5.37</p>
-          <p class="extras">Butter</p>
-        </div>
-      </section>
-      <section class="customer-payment box">
+          <ul class="extras-list">
+            <li class="extras">Butter</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section class="customer-payment">
+      <div class="customers-name box">
         <h2>NAME</h2>
-        <div class="customers-name">
+        <div class="input-group">
           <label for="name-on-order" class="name-input">Name for order</label>
-          <input id="name-on-order" type="text">
+          <input class="user-input" type="text">
         </div>
+      </div>
+      <div class="card-info box">
         <h2>PAYMENT</h2>
-        <div class="card-number">
+        <div class="input-group">
           <label for="card-number" class="card-input">Card number</label>
-          <input id="card-number" type="text">
+          <input class="user-input" type="text">
         </div>
-        <div class="cvv-number">
+        <div class="input-group">
           <label for="cvv-number" class="cvv-input">CVV number</label>
-          <input id="cvv-number" type="text">
+          <input class="user-input short-input" type="text">
         </div>
-      </section>
-    </main>
-    <footer>
+      </div>
+    </section>
+    <section class="totals">
       <table class="order-totals">
         <tbody>
-          <tr class="subtotal">
+          <tr>
             <td>Subtotal:</td>
             <td>$19.27</td>
           </tr>
-          <tr class="tax">
+          <tr>
             <td>Tax:</td>
             <td>$0.96</td>
           </tr>
@@ -73,8 +83,7 @@
         </tbody>
       </table>
       <button>Place order</button>
-    </footer>
+    </section>
   </div>
 </body>
-
 </html>
