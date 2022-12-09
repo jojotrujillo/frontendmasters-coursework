@@ -1,1 +1,1 @@
-My HTML project for the Intro to Web Development course on Frontendmasters.com
+My React.js coursework for the Intro to React course on Frontendmasters.com
