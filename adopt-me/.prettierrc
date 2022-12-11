@@ -1,0 +1,5 @@
+{
+    "//": "Empty curly brackets in .prettierrc indicate default settings",
+    "// more info": "See https://prettier.io/docs/en/configuration.html for more information",
+    "// twitter": "Where I got this commenting in JSON tip from: https://twitter.com/housecor/status/1599750653105958917"
+}
