@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Pet = (props) => {
   const { name, animal, breed, images, location, id } = props;
 
@@ -7,7 +9,7 @@ const Pet = (props) => {
   }
 
   return (
-    <a href={`/details/${id}`} className="pet">
+    <Link to={`/details/${id}`} className="pet">
       <div className="image-container">
         <img src={hero} alt={name} />
       </div>
@@ -17,7 +19,7 @@ const Pet = (props) => {
         {/* On Windows, Alt + 0151 gets you an em dash */}
         <h2>{`${animal} — ${breed} — ${location}`}</h2>
       </div>
-    </a>
+    </Link>
   );
 };
 
