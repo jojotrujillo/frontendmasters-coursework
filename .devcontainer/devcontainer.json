@@ -1,15 +1,24 @@
 {
+  "name": "intro-to-nextjs-13-v2",
   // Visit https://containers.dev/ for Development Container reference
-	"build": { "dockerfile": "Dockerfile" },
-	// https://github.com/devcontainers/images/tree/main/src/typescript-node
-  "forwardPorts": [3000],
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  // https://github.com/devcontainers/images/tree/main/src/typescript-node
+  "forwardPorts": [
+    3000
+  ],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "npm install",
   "customizations": {
     // Configure properties specific to VS Code.
     "vscode": {
       // Add the IDs of extensions you want installed when the container is created.
-      "extensions": ["streetsidesoftware.code-spell-checker"]
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "wakatime.vscode-wakatime",
+        "github.copilot"
+      ]
     }
   }
 }

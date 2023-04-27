@@ -1,0 +1,9 @@
+{
+  "files.insertFinalNewline": true,
+  "cSpell.words": [
+    "nextjs",
+    "wakatime"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
