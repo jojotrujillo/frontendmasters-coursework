@@ -39,6 +39,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ___
 
+## Notes
 My Next.js project for the [Intro to Next.js, v2 course on frontendmasters.com](https://frontendmasters.com/courses/next-js-v2/)
 
 Course website: https://intro-nextjs-v2-instructions.vercel.app/
@@ -47,3 +48,10 @@ Other React.js frameworks, if curious: https://remix.run/, and https://astro.bui
 
 Interesting Things to Note:
 A modern terminal: https://www.warp.dev/
+
+The following CLI command generates a latest and newest Next.js app
+```
+npx create-next-app@13.1 --experimental-app
+```
+
+The ```next``` prefix in package.json is a CLI command. More info can be found at https://www.npmjs.com/package//next.
