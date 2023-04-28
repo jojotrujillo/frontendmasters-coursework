@@ -55,3 +55,12 @@ npx create-next-app@13.1 --experimental-app
 ```
 
 The ```next``` prefix in package.json is a CLI command. More info can be found at https://www.npmjs.com/package//next.
+
+Server components are not to be confused with Server Side Rendering (SSR). Traditional SSR renders then serializes the HTML on the
+backend then sends it to the client whereas server components fetch any necessary data then get streamed to the client and can't access frontend resources or APIs.
+
+Since all components are server components by default, Next.js 13+ forces you to think about how your components will be used, for example, if you have a form versus a navigation bar. Also, a lot of 3rd-party libraries will require the ```'use client'``` directive to work properly.
+
+An example of an error when trying to access client-side objects with a server component:
+
+![An example of an error when trying to access client-side objects with a server component](/README-imgs/server-component-error.png)
