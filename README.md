@@ -25,3 +25,7 @@ cd intro-to-rust
 ```
 
 You're all set!
+
+## Notes
+```as``` can be used to cast values to other values
+The last expression in a function will automatically get returned regardless if you use the ```return``` keyword
