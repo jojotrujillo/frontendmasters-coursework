@@ -15,14 +15,14 @@ function Order() {
   let price, selectedPizza;
 
   async function fetchPizzaTypes() {
-    await new Promise((resolve) => setTimeout(resolve, 3000));
-
     const pizzasRes = await fetch("/api/pizzas");
     const pizzasJson = await pizzasRes.json();
     setPizzaTypes(pizzasJson);
     setLoading(false);
   }
 
+  // useEffects can't directly be async but can call async functions declared elsewhere
+  // https://dev.to/sanjampreetsingh/why-async-callback-cannot-happen-in-react-useeffect-hook-ff
   useEffect(() => {
     fetchPizzaTypes();
   }, []);
