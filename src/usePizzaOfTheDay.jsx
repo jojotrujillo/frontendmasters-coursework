@@ -1,5 +1,7 @@
 import { useDebugValue, useEffect, useState } from "react";
 
+// Custom hooks are not magic; simply wrappers around other hooks but good
+// at separating out fetching logic from display logic
 const usePizzaOfTheDay = () => {
   const [pizzaOfTheDay, setPizzaOfTheDay] = useState(null);
 
