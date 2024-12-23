@@ -1,7 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import Pizza from "./Pizza.jsx";
-import Cart from "./Cart.jsx";
-import { CartContext } from "./contexts.jsx";
+import Pizza from "../Pizza.jsx";
+import Cart from "../Cart.jsx";
+import { CartContext } from "../contexts.jsx";
+import { createLazyFileRoute } from "@tanstack/react-router";
+
+export const Route = createLazyFileRoute("/order")({
+  component: Order,
+});
 
 // Named functions compared to anonymous functions help with debugging
 // by the function name appearing in the stack trace
@@ -142,5 +147,3 @@ function Order() {
     </div>
   );
 }
-
-export default Order;
