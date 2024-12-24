@@ -1,11 +1,9 @@
 // Components own state is mutable a la useState, whereas props are immutable.
 // This Cart component cannot affect cart coming from Order.
 // https://react.dev/learn/passing-props-to-a-component#how-props-change-over-time
+import { priceConverter } from "./useCurrency.jsx";
+
 function Cart({ cart, checkout }) {
-  const intl = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
   let total = 0;
 
   for (let i = 0; i < cart.length; i++) {
@@ -25,7 +23,7 @@ function Cart({ cart, checkout }) {
           </li>
         ))}
       </ul>
-      <p>Total: {intl.format(total)}</p>
+      <p>Total: {priceConverter(total)}</p>
       <button onClick={checkout}>Checkout</button>
     </div>
   );
