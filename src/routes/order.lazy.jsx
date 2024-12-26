@@ -17,6 +17,7 @@ function Order() {
   const [pizzaSize, setPizzaSize] = useState("M");
   const [loading, setLoading] = useState(true);
   const [cart, setCart] = useContext(CartContext);
+  const apiUrl = import.meta.env.VITE_API_URL;
   let price, selectedPizza;
 
   function addToCart() {
@@ -26,7 +27,7 @@ function Order() {
   async function checkout() {
     setLoading(true);
 
-    await fetch("/api/order", {
+    await fetch(`${apiUrl}/api/order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +44,7 @@ function Order() {
   }
 
   async function fetchPizzaTypes() {
-    const pizzasRes = await fetch("/api/pizzas");
+    const pizzasRes = await fetch(`${apiUrl}/api/pizzas`);
     const pizzasJson = await pizzasRes.json();
     setPizzaTypes(pizzasJson);
     setLoading(false);
