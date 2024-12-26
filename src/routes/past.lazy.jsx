@@ -1,5 +1,5 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { Suspense, use, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import getPastOrders from "../api/getPastOrders.jsx";
 import getPastOrder from "../api/getPastOrder.jsx";
@@ -12,23 +12,37 @@ export const Route = createLazyFileRoute("/past")({
 });
 
 function ErrorBoundaryWrappedPastOrdersRoute() {
+  const [page, setPage] = useState(1);
+  const loadedPromise = useQuery({
+    queryKey: ["past-orders", page],
+    queryFn: () => getPastOrders(page),
+    staleTime: 30000,
+  }).promise;
+
   return (
     <ErrorBoundary>
-      <PastOrdersRoute />
+      <Suspense
+        fallback={
+          <div className={"past-orders"}>
+            <h2>Loading Past Orders...</h2>
+          </div>
+        }
+      >
+        <PastOrdersRoute
+          loadedPromise={loadedPromise}
+          page={page}
+          setPage={setPage}
+        />
+      </Suspense>
     </ErrorBoundary>
   );
 }
 
-function PastOrdersRoute() {
+function PastOrdersRoute({ loadedPromise, page, setPage }) {
   // To test the newly implemented ErrorBoundary component
   // throw new Error("wtf man");
-  const [page, setPage] = useState(1);
+  const data = use(loadedPromise);
   const [focusedOrder, setFocusedOrder] = useState();
-  const { isLoading, data } = useQuery({
-    queryKey: ["past-orders", page],
-    queryFn: () => getPastOrders(page),
-    staleTime: 30000,
-  });
   const { isLoading: isLoadingPastOrder, data: pastOrderData } = useQuery({
     queryKey: ["past-order", focusedOrder],
     queryFn: () => getPastOrder(focusedOrder),
@@ -36,14 +50,6 @@ function PastOrdersRoute() {
     // Type coercion to avoid JS truthiness/falsiness madness
     enabled: !!focusedOrder,
   });
-
-  if (isLoading) {
-    return (
-      <div className={"past-orders"}>
-        <h2>Loading...</h2>
-      </div>
-    );
-  }
 
   return (
     <div className={"past-orders"}>
