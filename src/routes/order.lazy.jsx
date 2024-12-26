@@ -19,6 +19,10 @@ function Order() {
   const [cart, setCart] = useContext(CartContext);
   let price, selectedPizza;
 
+  function addToCart() {
+    setCart([...cart, { pizza: selectedPizza, size: pizzaSize, price }]);
+  }
+
   async function checkout() {
     setLoading(true);
 
@@ -62,17 +66,7 @@ function Order() {
     <div className={"order-page"}>
       <div className={"order"}>
         <h2>Create Order</h2>
-        <form
-          onSubmit={(e) => {
-            // Prevents form from being submitted
-            e.preventDefault();
-            // Spread whatever is existing in cart but then add one more object
-            setCart([
-              ...cart,
-              { pizza: selectedPizza, size: pizzaSize, price },
-            ]);
-          }}
-        >
+        <form action={addToCart}>
           <div>
             <div>
               <label htmlFor={"pizza-type"}>Pizza Type</label>
