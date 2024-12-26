@@ -3,6 +3,8 @@ import createFetchMock from "vitest-fetch-mock";
 import usePizzaOfTheDay from "../usePizzaOfTheDay.jsx";
 import { renderHook, waitFor } from "@testing-library/react";
 
+vi.stubEnv("VITE_API_URL", "http://localhost:3000");
+
 const fetchMocker = createFetchMock(vi);
 fetchMocker.enableMocks();
 
@@ -41,5 +43,7 @@ test("to call the API and give back the pizza of the day", async () => {
     expect(result.current).toEqual(testPizza);
   });
 
-  expect(fetchMocker).toBeCalledWith("/api/pizza-of-the-day");
+  expect(fetchMocker).toBeCalledWith(
+    "http://localhost:3000/api/pizza-of-the-day",
+  );
 });
